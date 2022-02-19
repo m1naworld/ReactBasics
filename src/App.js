@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+// const a = {
+//   backgroundColor: 'red',
+// };
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Footer } from './components/Footer';
+import { Header } from './components/Header';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import { Route, Routes } from 'react-router-dom';
+// function App() {
+//   return (
+//     <div>
+//       <div style={a}> 안녕 </div>;<div className="box-style">헬로</div>
+//     </div>
+//   );
+// }
+
+// styled-component
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Routes>
+        <Route path="/" exact={true} element={<HomePage />} />
+        <Route path="/login/:id" exact={true} element={<LoginPage />} />
+      </Routes>
+
+      <Footer />
     </div>
   );
 }

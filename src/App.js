@@ -1,15 +1,18 @@
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Top from './components/Top';
-import Bottom from './components/Bottom';
-import './App.css';
-// 글쓰기, 글삭제, 글목록보기
+import HomePage from './pages/HomePage';
+import { Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import UserPage from './pages/UserPage';
 
 const App = () => {
   return (
-    <div className="container">
-      <h1> 최상단 화면</h1>
-      <Top />
-      <Bottom />
+    <div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/user" element={<UserPage />} />
+      </Routes>
     </div>
   );
 };

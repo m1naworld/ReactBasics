@@ -1,34 +1,17 @@
-// const a = {
-//   backgroundColor: 'red',
-// };
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Footer } from './components/Footer';
-import { Header } from './components/Header';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import { Route, Routes } from 'react-router-dom';
-// function App() {
-//   return (
-//     <div>
-//       <div style={a}> 안녕 </div>;<div className="box-style">헬로</div>
-//     </div>
-//   );
-// }
+import Top from './components/Top';
+import Bottom from './components/Bottom';
+import './App.css';
+// 글쓰기, 글삭제, 글목록보기
 
-// styled-component
-
-function App() {
+const App = () => {
   return (
-    <div>
-      <Header />
-      <Routes>
-        <Route path="/" exact={true} element={<HomePage />} />
-        <Route path="/login/:id" exact={true} element={<LoginPage />} />
-      </Routes>
-
-      <Footer />
+    <div className="container">
+      <h1> 최상단 화면</h1>
+      <Top />
+      <Bottom />
     </div>
   );
-}
+};
 
 export default App;
